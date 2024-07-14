@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         mono: ["Roboto Mono", "monospace"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

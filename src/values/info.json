@@ -1,0 +1,76 @@
+{
+  "experience": [
+    {
+      "startDate": "May 2021",
+      "endDate": "Present",
+      "title": "Co-Founder, Flutter & JUCE Developer",
+      "company": "Soundware Inc",
+      "description": "Build low latency audio plugins for both mobile and desktop platforms. Notably, I developed the Octane and Sylo JUCE plugins, with Octane serving as an instrument plugin and Sylo as a loops plugin. I implemented the complete UI in JUCE C++ for both plugins, successfully shipping them across multiple DAWs, including Fruity Loops and Garage Band. Additionally, I implemented a beatmaker using Flutter which replaces JUCE's native C++ UI with Flutter and interfaces between C++ & Dart with dart:ffi library",
+      "tags": ["C++", "Dart", "JUCE", "Flutter", "Cmake"],
+      "url": "https://www.soundware.io"
+    },
+    {
+      "startDate": "May 2020",
+      "endDate": "Feb 2021",
+      "title": "Android & iOS Developer",
+      "company": "Discord Inc",
+      "description": "Build tools for Discord server owners to improve the quality of the users they get to their server by providing them admin tools such as filling out surveys to vet users prior to joining, in addition to building customizable forms that server owners can create to help users onboard through their server",
+      "tags": ["React Native", "Kotlin", "MVVM"],
+      "url": "https://www.discord.com"
+    },
+    {
+      "startDate": "Jan 2018",
+      "endDate": "May 2020",
+      "title": "Android & iOS Developer",
+      "company": "Meta Inc (Facebook)",
+      "description": "Build multiple experiment variants on mobile to increase the interactivity of users with their stories through implementing a variation of UIs with the way users see their stories arranged on their News Feed. I provided detailed analysis through the internal data analyzer to compare the different variants and pick the one that achieved the desired metrics without cannibalizing the rest of the important core metrics",
+      "tags": [
+        "React Native",
+        "HACK",
+        "PHP",
+        "GraphQL",
+        "Buck",
+        "JavaScript",
+        "Swift",
+        "Java"
+      ],
+      "url": "https://www.facebook.com"
+    },
+    {
+      "startDate": "Mar 2017",
+      "endDate": "Dec 2017",
+      "title": "Android & iOS Developer",
+      "company": "Udemy Inc",
+      "description": "Improve the implementation of the ExoPlayer video player and provide upgrades that added better support for close captions",
+      "tags": ["Java", "Swift", "MVVM", "XML"],
+      "url": "https://www.udemy.com"
+    },
+    {
+      "startDate": "Dec 2014",
+      "endDate": "Feb 2017",
+      "title": "Android & iOS Developer",
+      "company": "Crunchyroll Inc",
+      "description": "Work with a team of designers and mobile developers to implement the VRV streaming application from prototype to release which included user authentication/subscription handling, notifications for new episode releases, and added chromecast support for streaming on living room devices. Also worked on maintaining the Android app for the Crunchyroll main app specifically in regards to handling ads support and video playback",
+      "tags": ["Java", "Swift", "HTML & CSS"],
+      "url": "https://www.crunchyroll.com"
+    },
+    {
+      "startDate": "Mar 2014",
+      "endDate": "Nov 2014",
+      "title": "Android Developer",
+      "company": "Twitter Inc",
+      "description": "Build a search takeover feature on Android during the cricket world cup in 2014 with different experiment variants in addition to providing match stats and news feed exposed to users who weren't signed in with the goal of growing the user base from emerging markets",
+      "tags": ["Java", "Scala"],
+      "url": "https://www.twitter.com"
+    },
+    {
+      "startDate": "May 2012",
+      "endDate": "Nov 2013",
+      "title": "Android Tablet Apps Developer",
+      "company": "Rakuten Kobo",
+      "description": "Build a custom Android Launcher for 3 different sized e-readers which had to go through Google certification. Specifically, I worked on implementing the onboarding flow for first time users who go through setting up their wifi, authenticate with their Kobo account, etc",
+      "tags": ["Java", "Scala"],
+      "url": "https://www.kobo.com"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 <script>
   import ExperienceComponent from "../components/ExperienceComponent.svelte";
   import BasePage from "./BasePage.svelte";
+  import infoData from "../values/info.json";
 </script>
 
 <BasePage>
@@ -9,31 +10,31 @@
       <div class="flex flex-col justify-between">
         <div class="flex flex-col space-y-2">
           <span
-            class="font-montserrat text-slate-200 text-5xl font-bold tracking-tight"
+            class="font-poppins text-slate-200 text-5xl font-bold tracking-tight"
             >Toufik Zitouni</span
           >
-          <span class="font-montserrat text-slate-200 text-lg tracking-wide"
+          <span class="font-poppins text-slate-200 text-lg tracking-wide"
             >Senior Fullstack Engineer</span
           >
-          <span class="font-mono font-light text-sm text-slate-400 pt-4"
+          <span class="font-poppins font-light text-sm text-slate-400 pt-4"
             >I build awesome mobile apps and also <br /> experienced in SaaS development</span
           >
         </div>
         <div class="flex flex-col items-start justify-start pt-24 space-y-4">
           <button
-            class="font-montserrat font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
           >
             <div></div>
             <span>Experience</span>
           </button>
           <button
-            class="font-montserrat font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
           >
             <div></div>
             <span>Projects</span>
           </button>
           <button
-            class="font-montserrat font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
           >
             <div></div>
             <span>Hobbies</span>
@@ -57,29 +58,17 @@
       </div>
     </div>
     <div class="flex flex-col flex-1 overflow-y-auto py-28 space-y-10">
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
-      <ExperienceComponent />
+      {#each infoData.experience as experience}
+        <ExperienceComponent
+          startDate={experience.startDate}
+          endDate={experience.endDate}
+          title={experience.title}
+          company={experience.company}
+          description={experience.description}
+          tags={experience.tags}
+          url={experience.url}
+        />
+      {/each}
     </div>
   </div>
 </BasePage>

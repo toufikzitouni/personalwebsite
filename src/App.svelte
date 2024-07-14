@@ -1,7 +1,8 @@
 <script>
-  import svelteLogo from "./assets/svelte.svg";
-  import viteLogo from "/vite.svg";
-  import Counter from "./lib/Counter.svelte";
+  import { Router, Route } from "svelte-routing";
+  import LandingPage from "./pages/LandingPage.svelte";
 </script>
 
-<main></main>
+<Router>
+  <Route path="/" component={LandingPage} />
+</Router>

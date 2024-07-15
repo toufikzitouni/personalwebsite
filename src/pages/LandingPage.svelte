@@ -3,6 +3,48 @@
   import BasePage from "./BasePage.svelte";
   import infoData from "../values/info.json";
   import HobbyComponent from "../components/HobbyComponent.svelte";
+  import { onMount } from "svelte";
+  import { writable } from "svelte/store";
+
+  let experienceSection, projectsSection, hobbiesSection;
+  let currentSection = writable("");
+
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  }
+
+  onMount(() => {
+    const sections = [
+      { id: "experience", element: experienceSection },
+      { id: "projects", element: projectsSection },
+      { id: "hobbies", element: hobbiesSection },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentSection.set(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      if (section.element) {
+        observer.observe(section.element);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section.element) {
+          observer.unobserve(section.element);
+        }
+      });
+    };
+  });
 </script>
 
 <BasePage>
@@ -17,27 +59,27 @@
           <span class="font-poppins text-slate-200 text-lg tracking-wide"
             >Senior Fullstack Engineer</span
           >
-          <span class="font-poppins font-light text-sm text-slate-400 pt-4"
-            >I build awesome mobile apps and also <br /> experienced in SaaS development</span
-          >
+          <span class="font-poppins font-light text-sm text-slate-400 pt-4">
+            I build awesome mobile apps and also <br /> experienced in SaaS development
+          </span>
         </div>
         <div class="flex flex-col items-start justify-start pt-24 space-y-4">
           <button
-            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class={`font-poppins font-semibold text-sm tracking-wide ${$currentSection === "experience" ? "text-slate-300" : "text-slate-500 hover:text-slate-300"}`}
+            on:click={() => scrollToSection("experience")}
           >
-            <div></div>
             <span>Experience</span>
           </button>
           <button
-            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class={`font-poppins font-semibold text-sm tracking-wide ${$currentSection === "projects" ? "text-slate-300" : "text-slate-500 hover:text-slate-300"}`}
+            on:click={() => scrollToSection("projects")}
           >
-            <div></div>
             <span>Projects</span>
           </button>
           <button
-            class="font-poppins font-semibold text-sm tracking-wide text-slate-500 hover:text-slate-300"
+            class={`font-poppins font-semibold text-sm tracking-wide ${$currentSection === "hobbies" ? "text-slate-300" : "text-slate-500 hover:text-slate-300"}`}
+            on:click={() => scrollToSection("hobbies")}
           >
-            <div></div>
             <span>Hobbies</span>
           </button>
         </div>
@@ -50,16 +92,19 @@
             fill="currentColor"
             class="h-6 w-6"
             aria-hidden="true"
-            ><path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-            ></path></svg
           >
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
         </button>
         <button></button>
       </div>
     </div>
     <div class="flex flex-col flex-1 overflow-y-auto py-28 space-y-10">
       <h1
+        id="experience"
+        bind:this={experienceSection}
         class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
       >
         Experience
@@ -76,6 +121,8 @@
         />
       {/each}
       <h1
+        id="projects"
+        bind:this={projectsSection}
         class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
       >
         Projects
@@ -91,6 +138,8 @@
         />
       {/each}
       <h1
+        id="hobbies"
+        bind:this={hobbiesSection}
         class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
       >
         Hobbies
@@ -102,6 +151,17 @@
           description={hobby.description}
         />
       {/each}
+
+      <p
+        class="font-poppins font-light text-xs text-slate-400 tracking-wide italic"
+      >
+        Design inspired from <a
+          href="https://brittanychiang.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-200">Brittany Chiang</a
+        >'s site and is implemented using Svelte and Tailwind
+      </p>
     </div>
   </div>
 </BasePage>

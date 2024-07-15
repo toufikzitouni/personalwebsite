@@ -58,6 +58,11 @@
       </div>
     </div>
     <div class="flex flex-col flex-1 overflow-y-auto py-28 space-y-10">
+      <h1
+        class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
+      >
+        Experience
+      </h1>
       {#each infoData.experience as experience}
         <ExperienceComponent
           startDate={experience.startDate}
@@ -67,6 +72,21 @@
           description={experience.description}
           tags={experience.tags}
           url={experience.url}
+        />
+      {/each}
+      <h1
+        class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
+      >
+        Projects
+      </h1>
+      {#each infoData.projects as project}
+        <ExperienceComponent
+          thumbnail={project.thumbnail}
+          title={project.title}
+          company={project.company}
+          description={project.description}
+          tags={project.tags}
+          url={project.url}
         />
       {/each}
     </div>

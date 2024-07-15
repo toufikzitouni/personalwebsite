@@ -1,4 +1,5 @@
 <script>
+  export let thumbnail = "";
   export let startDate = "2024";
   export let endDate = "present";
   export let title = "Senior Frontend Engineer, Accessibility";
@@ -16,18 +17,26 @@
   class="rounded-lg hover:bg-slate-500 hover:bg-opacity-10 p-4 mr-4"
 >
   <div class="flex space-x-10">
-    <div class="h-6 flex items-center w-40">
-      <span
-        class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
-        >{startDate}</span
-      >
-      <div class="flex px-1">
-        <div class="h-0.5 w-3 bg-slate-500"></div>
-      </div>
-      <span
-        class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
-        >{endDate}</span
-      >
+    <div class={`h-6 flex items-center w-40 ${thumbnail ? "h-64" : "h-6"}`}>
+      {#if thumbnail}
+        <img
+          src={thumbnail}
+          alt="Thumbnail"
+          class="h-64 w-40 object-cover rounded-xl"
+        />
+      {:else}
+        <span
+          class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
+          >{startDate}</span
+        >
+        <div class="flex px-1">
+          <div class="h-0.5 w-3 bg-slate-500"></div>
+        </div>
+        <span
+          class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
+          >{endDate}</span
+        >
+      {/if}
     </div>
     <div class="flex flex-col flex-1">
       <h3 class="font-poppins text-slate-100">

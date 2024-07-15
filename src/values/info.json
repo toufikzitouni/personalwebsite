@@ -69,8 +69,44 @@
       "title": "Android Tablet Apps Developer",
       "company": "Rakuten Kobo",
       "description": "Build a custom Android Launcher for 3 different sized e-readers which had to go through Google certification. Specifically, I worked on implementing the onboarding flow for first time users who go through setting up their wifi, authenticate with their Kobo account, etc",
-      "tags": ["Java", "Scala"],
+      "tags": ["Java"],
       "url": "https://www.kobo.com"
+    }
+  ],
+  "projects": [
+    {
+      "thumbnail": "./assets/images/getstems.png",
+      "title": "GetStems",
+      "company": "getstems.ai",
+      "description": "Build a stem separator application that uses AI models to separate a song into multiple instruments. It supports file upload, audio url, and even a youtube link. The application was designed also to support a SaaS model with an authenticated user where they can use the stem separator API for their own application with the generated access token provided. I also made available the full documentation of how to use the API",
+      "tags": [
+        "Machine Learning",
+        "JavaScript",
+        "React",
+        "Tailwind",
+        "Python",
+        "Typescript",
+        "RedisLabs",
+        "Firebase",
+        "Docker"
+      ],
+      "url": "https://getstems.ai"
+    },
+    {
+      "thumbnail": "./assets/images/tize.png",
+      "title": "Tize: Music & Beat Maker",
+      "company": "tize.soundware.io",
+      "description": "Build one of the very first music creation tools on mobile that allows musicians to share and collaborate with their music creation with others on the platform. The app was designed to have low latency when recording beats live and a very thought out UI that allowed for an easier way to create music patterns using music theory to speed up the creation process",
+      "tags": ["Objective-c", "Swift", "C++", "RethinkDB", "Firebase", "GCP"],
+      "url": "https://apps.apple.com/us/app/tize-music-beat-maker/id1130726632"
+    },
+    {
+      "thumbnail": "./assets/images/bump.png",
+      "title": "Bump: Drumpad, Beat Making App",
+      "company": "",
+      "description": "Build a gamified version of a beatmaker app where users can record a specific loop and let other users try to replicate playing the loops they recorded and in the process earn coins if they play as close as possible to the original recording",
+      "tags": ["Dart", "Flutter", "Firebase", "Backblaze", "GCP", "C++"],
+      "url": "https://apps.apple.com/us/app/bump-drumpad-beat-making-app/id1588567902"
     }
   ]
 }

@@ -108,5 +108,13 @@
       "tags": ["Dart", "Flutter", "Firebase", "Backblaze", "GCP", "C++"],
       "url": "https://apps.apple.com/us/app/bump-drumpad-beat-making-app/id1588567902"
     }
+  ],
+  "hobbies": [
+    {
+      "video": "./assets/videos/piano.mp4",
+      "title": "Classical Piano",
+      "company": "",
+      "description": "Piano plays a big part of my life and it's been a great way to learn about music theory while I develop my own music applications. No better feeling than playing someone else's composition and try to understand the feeling they were trying to convey through their artful pieces"
+    }
   ]
 }

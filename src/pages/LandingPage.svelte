@@ -2,6 +2,7 @@
   import ExperienceComponent from "../components/ExperienceComponent.svelte";
   import BasePage from "./BasePage.svelte";
   import infoData from "../values/info.json";
+  import HobbyComponent from "../components/HobbyComponent.svelte";
 </script>
 
 <BasePage>
@@ -87,6 +88,18 @@
           description={project.description}
           tags={project.tags}
           url={project.url}
+        />
+      {/each}
+      <h1
+        class="font-poppins font-light p-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
+      >
+        Hobbies
+      </h1>
+      {#each infoData.hobbies as hobby}
+        <HobbyComponent
+          video={hobby.video}
+          title={hobby.title}
+          description={hobby.description}
         />
       {/each}
     </div>

@@ -16,13 +16,15 @@
   rel="noopener noreferrer"
   class="rounded-lg hover:bg-slate-500 hover:bg-opacity-10 p-4 mr-4"
 >
-  <div class="flex space-x-10">
+  <div
+    class={`flex xl:flex-row  ${thumbnail ? "flex-row space-x-10" : "flex-col xl:space-x-10"}`}
+  >
     <div class={`h-6 flex items-center w-40 ${thumbnail ? "h-64" : "h-6"}`}>
       {#if thumbnail}
         <img
           src={thumbnail}
           alt="Thumbnail"
-          class="h-64 w-40 object-cover rounded-xl"
+          class="h-64 w-40 object-cover rounded-xl mb-2 xl:mb-0"
         />
       {:else}
         <span

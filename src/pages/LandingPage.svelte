@@ -278,7 +278,7 @@
     </div>
   </div>
   <div
-    class="absolute flex xl:hidden p-4 items-center justify-between inset-0 h-16 bg-slate-900 border-b border-slate-200 border-opacity-20"
+    class="fixed flex xl:hidden p-4 items-center justify-between inset-0 h-16 bg-slate-900 border-b border-slate-200 border-opacity-20"
   >
     <div class="flex items-center space-x-2">
       <img
@@ -291,7 +291,7 @@
         >Toufik Zitouni</span
       >
     </div>
-    <div class="relative">
+    <div class="relative z-20">
       <button
         class={`rounded p-1 ${isMenuOpen ? "bg-slate-600" : "bg-slate-700 hover:bg-slate-600"} `}
         on:click={() => (isMenuOpen = !isMenuOpen)}

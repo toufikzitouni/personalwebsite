@@ -6,9 +6,9 @@
   console.log(video);
 </script>
 
-<div class="p-4 mr-4">
-  <div class="flex space-x-10">
-    <div class="flex items-start w-40 h-64">
+<div class="xl:p-4 xl:mr-4">
+  <div class="flex flex-col xl:flex-row xl:space-x-10">
+    <div class="flex items-start w-40 xl:h-64 mb-4 xl:mb-0">
       <video
         controls
         src={video}

@@ -1,30 +1,27 @@
 <script>
   export let thumbnail = "";
-  export let startDate = "2024";
-  export let endDate = "present";
-  export let title = "Senior Frontend Engineer, Accessibility";
-  export let company = "Klaviyo";
-  export let description =
-    "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.";
-  export let tags = ["JavaScript", "TypeScript", "React", "Storybook"];
-  export let url = "https://www.google.com";
+  export let startDate = "";
+  export let endDate = "";
+  export let title = "";
+  export let company = "";
+  export let description = "";
+  export let tags = [];
+  export let url = "";
 </script>
 
 <a
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="rounded-lg hover:bg-slate-500 hover:bg-opacity-10 p-4 mr-4"
+  class="rounded-lg hover:bg-slate-500 hover:bg-opacity-10 py-4 xl:p-4 xl:mr-4"
 >
-  <div
-    class={`flex xl:flex-row  ${thumbnail ? "flex-row space-x-10" : "flex-col xl:space-x-10"}`}
-  >
+  <div class={`flex xl:flex-row flex-col xl:space-x-10`}>
     <div class={`h-6 flex items-center w-40 ${thumbnail ? "h-64" : "h-6"}`}>
       {#if thumbnail}
         <img
           src={thumbnail}
           alt="Thumbnail"
-          class="h-64 w-40 object-cover rounded-xl mb-2 xl:mb-0"
+          class="h-64 w-40 object-cover rounded-xl mb-4 xl:mb-0"
         />
       {:else}
         <span

@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1486,6 +1490,10 @@ video {
 
   .xl\:p-0 {
     padding: 0px;
+  }
+
+  .xl\:p-4 {
+    padding: 1rem;
   }
 
   .xl\:py-28 {

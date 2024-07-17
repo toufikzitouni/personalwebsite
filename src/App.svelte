@@ -4,5 +4,5 @@
 </script>
 
 <Router>
-  <Route path="/" component={LandingPage} />
+  <Route path="/personalwebsite/" component={LandingPage} />
 </Router>

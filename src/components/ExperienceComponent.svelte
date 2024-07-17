@@ -28,9 +28,11 @@
           class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
           >{startDate}</span
         >
-        <div class="flex px-1">
-          <div class="h-0.5 w-3 bg-slate-500"></div>
-        </div>
+        {#if endDate}
+          <div class="flex px-1">
+            <div class="h-0.5 w-3 bg-slate-500"></div>
+          </div>
+        {/if}
         <span
           class="font-poppins font-semibold text-xs tracking-wider text-slate-500 uppercase"
           >{endDate}</span

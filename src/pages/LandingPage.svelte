@@ -7,7 +7,7 @@
   import { writable } from "svelte/store";
 
   let isMenuOpen = false;
-  let experienceSection, projectsSection, hobbiesSection;
+  let experienceSection, projectsSection, publicationsSection, hobbiesSection;
   let currentSection = writable("");
 
   function scrollToSection(sectionId) {
@@ -18,6 +18,7 @@
     const sections = [
       { id: "experience", element: experienceSection },
       { id: "projects", element: projectsSection },
+      { id: "publications", element: publicationsSection },
       { id: "hobbies", element: hobbiesSection },
     ];
 
@@ -66,7 +67,7 @@
               >Toufik Zitouni</span
             >
             <span class="font-poppins text-slate-200 text-lg tracking-wide"
-              >Senior Fullstack Engineer</span
+              >Senior Android Engineer</span
             >
             <span class="font-poppins font-light text-sm text-slate-400 pt-4">
               I build awesome mobile apps and also <br /> experienced in SaaS development
@@ -79,6 +80,12 @@
             on:click={() => scrollToSection("experience")}
           >
             <span>Experience</span>
+          </button>
+          <button
+            class={`font-poppins font-semibold text-sm tracking-wide ${$currentSection === "publications" ? "text-slate-300" : "text-slate-500 hover:text-slate-300"}`}
+            on:click={() => scrollToSection("publications")}
+          >
+            <span>Publications</span>
           </button>
           <button
             class={`font-poppins font-semibold text-sm tracking-wide ${$currentSection === "projects" ? "text-slate-300" : "text-slate-500 hover:text-slate-300"}`}
@@ -234,6 +241,20 @@
         />
       {/each}
       <h1
+        id="publications"
+        bind:this={publicationsSection}
+        class="font-poppins font-light py-4 pt-0 mr-0 xl:mr-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
+      >
+        Publications
+      </h1>
+      {#each infoData.publications as publication}
+        <ExperienceComponent
+          startDate={publication.startDate}
+          title={publication.title}
+          url={publication.url}
+        />
+      {/each}
+      <h1
         id="projects"
         bind:this={projectsSection}
         class="font-poppins font-light py-4 mr-0 xl:mr-4 text-slate-400 text-xl tracking-wider border-b border-slate-400 border-opacity-40"
@@ -250,6 +271,7 @@
           url={project.url}
         />
       {/each}
+
       <h1
         id="hobbies"
         bind:this={hobbiesSection}
@@ -316,6 +338,12 @@
           on:click={() => scrollToSection("experience")}
         >
           <span>Experience</span>
+        </button>
+        <button
+          class={`w-full text-start font-poppins font-light text-sm tracking-wide p-2 text-white  ${$currentSection === "publications" ? "bg-slate-500" : "bg-slate-700 hover:bg-slate-600"}`}
+          on:click={() => scrollToSection("publications")}
+        >
+          <span>Publications</span>
         </button>
         <button
           class={`w-full text-start font-poppins font-light text-sm tracking-wide p-2 text-white  ${$currentSection === "projects" ? "bg-slate-500" : "bg-slate-700 hover:bg-slate-600"}`}

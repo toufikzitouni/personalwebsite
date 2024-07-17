@@ -109,6 +109,18 @@
       "url": "https://apps.apple.com/us/app/bump-drumpad-beat-making-app/id1588567902"
     }
   ],
+  "publications": [
+    {
+      "startDate": "Feb 2011",
+      "title": "An empirical assessment of approaches to distributed enforcement in role-based access control (RBAC)",
+      "url": "https://dl.acm.org/doi/10.1145/1943513.1943530"
+    },
+    {
+      "startDate": "Jan 2011",
+      "title": "A Statistically Rigorous Evaluation of the Cascade Bloom Filter for Distributed Access Enforcement in Role-Based Access Control (RBAC) Systems",
+      "url": "https://uwspace.uwaterloo.ca/bitstream/handle/10012/5747/Zitouni_Toufik.pdf"
+    }
+  ],
   "hobbies": [
     {
       "video": "./assets/videos/piano.mp4",

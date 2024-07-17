@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://toufikzitouni.github.io/personalwebsite",
+  "homepage": "https://toufikzitouni.com",
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run watch:css\"",
     "build": "vite build",
